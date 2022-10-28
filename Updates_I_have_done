@@ -1,0 +1,33 @@
+I have added :
+
+/var/lib/jenkins/workspace/Edureka_Certification_Project/gradle/wrapper# cat gradle-wrapper.properties 
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.10-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+
+I have uploaded Kubernetes continuous deploy.hpi plugin in order to execute functions in the jenkins file
+<find the plugin in plugins folder>
+
+In kubernetesDeploy function, for kubeConfigId ---> we need to go to K8s master, 
+follow these steps:
+  ls -al
+  cd .kube
+  cat config
+copy text and 
+go to jenkins -> Manage jenkins-> manage credentials -> add credentials
+select kubernetes configuration from drop down
+under kubeconfig paste the context which you copied fromm k8s master node.
+
+I have done some modifications regarding ports in  yaml files
+please find those updated files under <updated_files> folder
+
+
+
+While running the job in jenkins, Before going to deploy in k8s, it will prompt for Yes or No,
+In order to provide input, go to project dashboard and hover mouse on last step (which is in idle state), 
+Deploy to Production?
+Yes/No (click on Yes)
+
+
