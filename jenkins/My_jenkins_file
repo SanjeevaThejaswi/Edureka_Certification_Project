@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                git url: 'https://github.com/SanjeevaThejaswi/cicd-pipeline-train-schedule-autodeploy'
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
